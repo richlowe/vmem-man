@@ -3,10 +3,15 @@
 .Os
 .Sh NAME
 .Nm vmem_create ,
+.Nm vmem_xcreate ,
 .Nm vmem_destroy
 .Nd create and destroy vmem arenas
 .Sh SYNOPSIS
 .In sys/vmem.h
+.Vt "typedef struct vmem vmem_t;"
+.Vt "typedef void *(vmem_alloc_t)(vmem_t *, size_t, int);"
+.Vt "typedef void (vmem_free_t)(vmem_t *, void *, size_t);"
+.Vt "typedef void *(vmem_ximport_t)(vmem_t *, size_t *, size_t, int);"
 .Ft vmem_t *
 .Fo vmem_create
 .Fa "const char *name"
@@ -14,6 +19,18 @@
 .Fa "size_t size"
 .Fa "size_t quantum"
 .Fa "vmem_alloc_t *afunc"
+.Fa "vmem_free_t *ffunc"
+.Fa "vmem_t *source"
+.Fa "size_t qcache_max"
+.Fa "int vmflag"
+.Fc
+.Ft vmem_t *
+.Fo vmem_xcreate
+.Fa "const char *name"
+.Fa "void *base"
+.Fa "size_t size"
+.Fa "size_t quantum"
+.Fa "vmem_ximport_t *afunc"
 .Fa "vmem_free_t *ffunc"
 .Fa "vmem_t *source"
 .Fa "size_t qcache_max"
@@ -42,7 +59,7 @@ The granularity of the arena.  The amount allocated at minimum by each request.
 .It Fa afunc
 A function which is called to import new spans from
 .Fa source .
-Can be NULL
+Can be NULL.
 .It Fa ffunc
 A function which is called to return spans to
 .Fa source .
@@ -77,6 +94,25 @@ This commonly represents virtual memory, but can in fact be an arbitrary set
 of integers. The
 .Dv VMC_IDENTIFIER
 flag set at arena creation time differentiates between these two cases.
+.Pp
+The
+.Fa afunc ,
+.Fa ffunc , and
+.Fa source
+arguments combine to support a hierarchical structure of arenas, each
+importing from a single parent (the
+.Fa source ) .
+The
+.Fn vmem_create
+and
+.Fn vmem_xcreate
+functions differ in that the latter provides an interface for
+.Fa afunc
+to alter the size of the span imported from
+.Fa source .
+It is only legal to
+.Em increase
+thise size.
 .Sh CONTEXT
 XXX
 .Sh RETURN VALUES
