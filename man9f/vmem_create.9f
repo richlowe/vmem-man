@@ -123,5 +123,6 @@ functions return a pointer to a vmem arena.  Otherwise,
 .Dv NULL
 is returned to indicate the arena could not be created.
 .Sh SEE ALSO
+.Xr vmem 9 ,
 .Xr vmem_add 9F ,
 .Xr vmem_alloc 9F

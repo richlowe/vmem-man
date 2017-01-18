@@ -141,4 +141,5 @@ When the
 .Dv VM_SLEEP
 flag is specified, these functions can never fail (but may block forever).
 .Sh SEE ALSO
+.Xr vmem 9 ,
 .Xr vmem_create 9F

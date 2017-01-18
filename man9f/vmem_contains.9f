@@ -38,6 +38,7 @@ XXX
 .Fn vmem_contains
 returns non-0 if the segment exists, and 0 otherwise.
 .Sh SEE ALSO
+.Xr vmem 9 ,
 .Xr vmem_add 9F ,
 .Xr vmem_alloc 9F ,
 .Xr vmem_create 9F

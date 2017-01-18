@@ -52,5 +52,6 @@ On failure,
 .Dv NULL
 is returned.
 .Sh SEE ALSO
+.Xr vmem 9 ,
 .Xr vmem_alloc 9F ,
 .Xr vmem_create 9F
