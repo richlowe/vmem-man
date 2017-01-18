@@ -42,7 +42,10 @@ or
 .Dv VM_NOSLEEP
 must be specified, and indicate whether the addition may block.
 .Sh CONTEXT
-XXX
+This function can be called from either user or kernel context.
+If the
+.Dv VM_NOSLEEP
+flag is specified, it may also be called from interrupt context.
 .Sh RETURN VALUES
 Upon success
 .Fn vmem_add

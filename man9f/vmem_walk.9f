@@ -69,7 +69,7 @@ walks each segment in the arena
 and totals the size of each matching
 .Fa typemask .
 .Sh CONTEXT
-XXX
+This function may be called from user or kernel context.
 .Sh SEE ALSO
 .Xr vmem 9 ,
 .Xr vmem_alloc 9F ,

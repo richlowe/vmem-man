@@ -33,7 +33,7 @@ bytes at
 exists within the vmem arena
 .Fa vmp .
 .Sh CONTEXT
-XXX
+This function may be called from user or kernel context.
 .Sh RETURN VALUES
 .Fn vmem_contains
 returns non\-0 if the segment exists, and 0 otherwise.

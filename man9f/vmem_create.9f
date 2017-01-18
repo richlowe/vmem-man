@@ -114,7 +114,7 @@ It is only legal to
 .Em increase
 thise size.
 .Sh CONTEXT
-XXX
+These functions can be called from user or kernel context.
 .Sh RETURN VALUES
 Upon successful completion the
 .Fn vmem_create and

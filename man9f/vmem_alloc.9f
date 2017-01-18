@@ -122,7 +122,10 @@ must always be freed with
 .Fn vmem_xfree ,
 since these allocations are uncached.
 .Sh CONTEXT
-XXX
+This function can be called from either user or kernel context.
+If the
+.Dv VM_NOSLEEP
+flag is specified, it may also be called from interrupt context.
 .Sh RETURN VALUES
 Upon successfull completion the
 .Fn vmem_alloc
