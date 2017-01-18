@@ -106,7 +106,7 @@ provides sequential behaviour useful when allocating identifiers from a
 arena.
 .El
 .Pp
-The default (un-named) allocation policy is
+The default (un\-named) allocation policy is
 .Dq instant fit
 an approximation of
 .Dv VM_BESTFIT

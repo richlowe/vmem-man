@@ -102,7 +102,7 @@ and
 .Li "[b, c)"
 are both free, we merge them into a single segment
 .Li "[a, c)" .
-The segments within a span are linked together in increasing-address
+The segments within a span are linked together in increasing\-address
 order so we can easily determine whether coalescing is possible.
 .Pp
 Segments never cross span boundaries.  When all segments within an imported
@@ -147,7 +147,7 @@ time, that defines the arena's minimum unit of currency.  Most commonly the
 quantum is either 1 or
 .Dv PAGESIZE ,
 but any power of 2 is legal.  All vmem allocations are guaranteed to be
-quantum-aligned.
+quantum\-aligned.
 .Ss Relationship to the Kernel Memory Allocator
 Every kmem cache has a vmem arena as its slab supplier.  The kernel memory
 allocator uses
