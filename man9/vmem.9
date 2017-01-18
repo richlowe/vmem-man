@@ -33,8 +33,7 @@
 .Nd virtual memory allocator
 .Sh DESCRIPTION
 .Ss Overview
-We divide the kernel address space into a number of logically distinct
-pieces, or
+An address space is divided into a number of logically distinct pieces, or
 .Em arenas :
 text, data, heap, stack, and so on.
 Within these
@@ -47,7 +46,7 @@ space
 but also for DVMA,
 .Fn bp_mapin ,
 .Pa /dev/kmem ,
-and even some device mappings like the TOD chip.
+and even some device mappings.
 .Pp
 The kernel address space, therefore, is most accurately described as
 a tree of arenas in which each node of the tree
