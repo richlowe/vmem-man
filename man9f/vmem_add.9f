@@ -3,7 +3,7 @@
 .Os
 .Sh NAME
 .Nm vmem_add
-.Nd add space to a vmem arena
+.Nd add spans to a vmem arena
 .Sh SYNOPSIS
 .In sys/vmem.h
 .Ft void *
@@ -18,13 +18,13 @@ illumos DDI specific
 .Sh PARAMETERS
 .Bl -tag -width Ds
 .It Fa vmp
-The vmem arena to which the space should be added.
+The vmem arena to which the span should be added.
 .It Fa vaddr
-The base address of the space to add.
+The base address of the span to add.
 .It Fa size
-The size of the space to add
+The size of the span to add
 .It Fa vmflag
-Flags affecting the allocation of the space to add.
+Flags affecting the allocation of the span to add.
 .El
 .Sh DESCRIPTION
 The
