@@ -58,7 +58,11 @@ and supports their natural hierarchical structure.
 An arena is nothing more than a set of integers.  These integers most
 commonly represent virtual addresses, but in fact they can represent
 anything at all.  For example, we could use an arena containing the
-integers minpid through maxpid to allocate process IDs.
+integers minpid through maxpid to allocate process IDs.  For uses of this
+nature, prefer
+.Xr id_space 9F
+instead.
+.Pp
 .Fn vmem_create
 and
 .Fn vmem_destroy
