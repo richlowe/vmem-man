@@ -117,10 +117,10 @@ thise size.
 XXX
 .Sh RETURN VALUES
 Upon successful completion the
-.Fn vmem_create
-function returns a pointer to a vmem arena.
-Otherwise,
+.Fn vmem_create and
+.Fn vmem_xcreate
+functions return a pointer to a vmem arena.  Otherwise,
 .Dv NULL
 is returned to indicate the arena could not be created.
 .Sh SEE ALSO
-XXX
+.Xr vmem_alloc 9F
