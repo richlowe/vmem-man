@@ -45,8 +45,7 @@ illumos DDI specific
 .Sh PARAMETERS
 .Bl -tag -width Ds
 .It Fa name
-A character string giving a name to the
-.Sy vmem
+A character string giving a name to the vmem
 arena to be created.
 .It Fa base
 An address indicating the lowest possible value in the arena.
