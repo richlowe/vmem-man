@@ -104,6 +104,12 @@ Take the segment from the segment after the one previously allocated.  This
 provides sequential behaviour useful when allocating identifiers from a
 .Dv VMC_IDENTIFIER
 arena.
+.It Dv VM_ENDALLOC
+May be specified in combination with
+.Dv VM_BESTFIT ,
+.Dv VM_FIRSTFIT
+or the default policy to indicate that the higher addresses should be
+preferred.
 .El
 .Pp
 The default (un\-named) allocation policy is
