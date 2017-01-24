@@ -74,13 +74,9 @@ up to
 .It Fa vmflag
 A bitmask of flags indicating the characteristics of this arena.
 .Bl -tag -width Ds
-.It Dv VMC_NO_QCACHE
-The arena cannot use quantum caching.
 .It Dv VMC_IDENTIFIER
 The arena represents arbitrary integer identifiers, rather than virtual
 memory.
-.It Dv VMC_DUMPSAFE
-It is safe to use alternate dump memory when dumping this arena (XXX)
 .El
 .It Fa vmp
 A pointer to the vmem arena to be destroyed.
